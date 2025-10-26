@@ -1,0 +1,23 @@
+target Rust;
+reactor A {
+  input a: int;
+  output out: int;
+  reaction(a) -> out {=
+    ctx.set(out, ctx.get(a).unwrap());
+  =}
+}
+
+reactor B extends A {
+  input b:u32;
+  reaction(a, b) -> out {=
+    ctx.set(out, ctx.get(a).unwrap() + ctx.get(b).unwrap());
+  =}
+}
+
+main reactor {
+  b = new B();
+  reaction (startup) -> b.b, b.a {=
+    ctx.set(b__b, 2);
+    ctx.set(b__a, 3);
+  =}
+}
