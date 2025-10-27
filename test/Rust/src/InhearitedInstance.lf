@@ -19,5 +19,6 @@ main reactor {
   reaction (startup) -> b.b, b.a {=
     ctx.set(b__b, 2);
     ctx.set(b__a, 3);
+
   =}
 }
