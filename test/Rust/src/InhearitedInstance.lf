@@ -1,7 +1,7 @@
 target Rust;
 reactor A {
-  input a: int;
-  output out: int;
+  input a: u32;
+  output out: u32;
   reaction(a) -> out {=
     ctx.set(out, ctx.get(a).unwrap());
   =}
