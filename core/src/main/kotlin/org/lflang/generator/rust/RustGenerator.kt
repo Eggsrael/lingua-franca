@@ -25,6 +25,7 @@
 package org.lflang.generator.rust
 
 import org.eclipse.emf.ecore.resource.Resource
+import org.lflang.ast.ASTUtils
 import org.lflang.target.Target
 import org.lflang.generator.*
 import org.lflang.generator.GeneratorUtils.canGenerate
@@ -66,6 +67,8 @@ class RustGenerator(
 
     override fun doGenerate(resource: Resource, context: LFGeneratorContext) {
         super.doGenerate(resource, context)
+
+        this.reactors = ASTUtils.getAllReactors(resource)
 
         if (!canGenerate(errorsOccurred(), mainDef, messageReporter, context)) return
 

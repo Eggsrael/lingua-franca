@@ -98,6 +98,7 @@ data class ReactorInfo(
     val preambles: List<TargetCode>,
 
     val typeParamList: List<TypeParamInfo>,
+    val inheritedReactors: List<ReactorDecl>,
 
     /**
      * List of reactor instances that are directly created by this reactor.
@@ -613,6 +614,7 @@ object RustModelBuilder {
                 },
                 nestedInstances = reactor.instantiations.map { it.toModel() },
                 connections = reactor.connections,
+                inheritedReactors = reactor.superClasses,
                 ctorParams = reactor.parameters.map {
                     CtorParamInfo(
                         lfName = it.name,
