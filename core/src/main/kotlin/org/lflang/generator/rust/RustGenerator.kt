@@ -68,8 +68,6 @@ class RustGenerator(
     override fun doGenerate(resource: Resource, context: LFGeneratorContext) {
         super.doGenerate(resource, context)
 
-        this.reactors = ASTUtils.getAllReactors(resource)
-
         if (!canGenerate(errorsOccurred(), mainDef, messageReporter, context)) return
 
         Files.createDirectories(fileConfig.srcGenPath)

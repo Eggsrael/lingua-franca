@@ -98,6 +98,7 @@ data class ReactorInfo(
     val preambles: List<TargetCode>,
 
     val typeParamList: List<TypeParamInfo>,
+    /** list of reactors a reactor Inherits. */
     val inheritedReactors: List<ReactorDecl>,
 
     /**
@@ -584,6 +585,7 @@ object RustModelBuilder {
                         // remove code block
                         it.copy(lfText = it.lfText.replace(TARGET_BLOCK_R, "{= ... =}"))
                     }
+
                 )
             }
 

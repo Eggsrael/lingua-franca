@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -36,6 +37,7 @@ import org.lflang.lf.LfFactory;
 import org.lflang.lf.Mode;
 import org.lflang.lf.Reaction;
 import org.lflang.lf.Reactor;
+import org.lflang.lf.ReactorDecl;
 import org.lflang.lf.VarRef;
 import org.lflang.target.Target;
 import org.lflang.target.TargetConfig;
@@ -291,6 +293,18 @@ public abstract class GeneratorBase extends AbstractLFValidator {
         }
       }
     }
+    // If the target language supports Inheritance then a copy of the reactors list
+		// will be generated and iterated looking for superClasses.
+    if (targetConfig.target.supportsInheritance()) {
+			List<Reactor> frozenReactors = List.copyOf(reactors);
+			for (Reactor r : frozenReactors) {
+				if (!r.getSuperClasses().isEmpty()){
+					for (ReactorDecl d: r.getSuperClasses()){
+						reactors.add(ASTUtils.toDefinition(d));
+					}
+				}
+			}
+		}
   }
 
   /**
