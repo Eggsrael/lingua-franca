@@ -8,9 +8,11 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Queue;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.eclipse.core.resources.IMarker;
@@ -295,16 +297,23 @@ public abstract class GeneratorBase extends AbstractLFValidator {
     }
     // If the target language supports Inheritance then a copy of the reactors list
 		// will be generated and iterated looking for superClasses.
-    if (targetConfig.target.supportsInheritance()) {
-			List<Reactor> frozenReactors = List.copyOf(reactors);
-			for (Reactor r : frozenReactors) {
-				if (!r.getSuperClasses().isEmpty()){
-					for (ReactorDecl d: r.getSuperClasses()){
-						reactors.add(ASTUtils.toDefinition(d));
-					}
-				}
-			}
-		}
+	  // we then go through all the superClasses and add them to the reactors list.
+
+    if (getTarget().supportsInheritance()) {
+	    Queue<Reactor> reactorQueue = new LinkedList<>(reactors);
+
+	    while(!reactorQueue.isEmpty()) {
+		    Reactor r = reactorQueue.poll();
+
+		    for (ReactorDecl d: r.getSuperClasses()) {
+			    Reactor reactor = ASTUtils.toDefinition(d);
+			    if (!reactors.contains(reactor)) {
+				    reactorQueue.add(reactor);
+				    reactors.add(reactor);
+			    }
+		    }
+	    }
+    }
   }
 
   /**

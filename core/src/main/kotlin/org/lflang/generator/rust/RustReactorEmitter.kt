@@ -54,9 +54,9 @@ object RustReactorEmitter : RustEmitterBase() {
                 |${generatedByComment("//")}
                 |#![allow(unused)]
                 |
-${"             |" ..reactor.inheritedReactors.joinToString(separator = "\n\n", prefix = "\n", postfix = "\n"){"use crate::reactors::${it.name.lowercase()}::*;"}}
-                |
                 |use $rsRuntime::prelude::*;
+				|
+${"             |"..reactor.inheritedReactors.joinToString(separator = "\n") { "use crate::reactors::${it.name.lowercase()}::*;" }}
                 |
 ${"             |"..reactor.preambles.joinToString("\n\n") { "// preamble {=\n${it.trimIndent()}\n// =}" }}
                 |
