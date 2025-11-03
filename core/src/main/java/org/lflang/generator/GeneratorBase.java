@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -295,16 +294,16 @@ public abstract class GeneratorBase extends AbstractLFValidator {
         }
       }
     }
-    // If the target language supports Inheritance then a copy of the reactors list
-		// will be generated and iterated looking for superClasses.
-	  // we then go through all the superClasses and add them to the reactors list.
 
+    // If the target language supports Inheritance then load a Queue with the reactors
+	  // in reactors.
+	  // The queue will check each reactor for superClasses and add them to the reactors
+	  // list if they do not exist.
+	  // uses queue to support multilevel inheritance.
     if (getTarget().supportsInheritance()) {
 	    Queue<Reactor> reactorQueue = new LinkedList<>(reactors);
-
 	    while(!reactorQueue.isEmpty()) {
 		    Reactor r = reactorQueue.poll();
-
 		    for (ReactorDecl d: r.getSuperClasses()) {
 			    Reactor reactor = ASTUtils.toDefinition(d);
 			    if (!reactors.contains(reactor)) {
