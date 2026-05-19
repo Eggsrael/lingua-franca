@@ -1,0 +1,96 @@
+/*
+ @licstart  The following is the entire license notice for the JavaScript code in this file.
+
+ The MIT License (MIT)
+
+ Copyright (C) 1997-2020 by Dimitri van Heesch
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software
+ and associated documentation files (the "Software"), to deal in the Software without restriction,
+ including without limitation the rights to use, copy, modify, merge, publish, distribute,
+ sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING
+ BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+ @licend  The above is the entire license notice for the JavaScript code in this file
+*/
+var NAVTREE =
+[
+  [ "lingua-franca", "index.html", [
+    [ "Lingua Franca", "index.html", null ],
+    [ "Contributing to Lingua Franca", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html", [
+      [ "Contributing code", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md1", [
+        [ "Writing tests", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md2", null ],
+        [ "Workflow", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md3", null ],
+        [ "Code style and formatting", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md4", [
+          [ "Formatting", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md5", null ],
+          [ "General guidelines", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md6", null ],
+          [ "Java-specific guidelines", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md7", null ],
+          [ "Kotlin-specific guidelines", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2docs_2markdown_22__contributing.html#autotoc_md8", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "DOCUMENTATION", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2DOCUMENTATION.html", [
+      [ "Documentation Generation", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2DOCUMENTATION.html#autotoc_md9", [
+        [ "Automatically Generated Doc Files", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2DOCUMENTATION.html#autotoc_md10", null ],
+        [ "Building Doc Files Locally", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2DOCUMENTATION.html#autotoc_md11", [
+          [ "View Documentation Files", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2DOCUMENTATION.html#autotoc_md12", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "LICENSE", "md__2Users_2runner_2work_2lingua-franca_2lingua-franca_2LICENSE.html", null ],
+    [ "Topics", "topics.html", "topics" ],
+    [ "Classes", "annotated.html", [
+      [ "Classes", "annotated.html", "annotated_dup" ],
+      [ "Classes", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", "functions_vars" ]
+      ] ]
+    ] ]
+  ] ]
+];
+
+var NAVTREEINDEX =
+[
+"annotated.html",
+"classorg_1_1lflang_1_1analyses_1_1c_1_1CAst_1_1IfBlockNode.html#ad9ef9a6d2e8a2b6475ab5479d15518fc",
+"classorg_1_1lflang_1_1analyses_1_1c_1_1IfNormalFormAstVisitor.html#acd6492d7ed65fd9c5f4e16c9158b6cef",
+"classorg_1_1lflang_1_1ast_1_1ASTUtils.html#a75dae663a7a3f4fef84b48750379243d",
+"classorg_1_1lflang_1_1ast_1_1ToSExpr.html#a2855f53cd57d76bcd18822d0047f9c94",
+"classorg_1_1lflang_1_1cli_1_1LffCliTest.html#aadd99b9991d3c61b59c559ded1903bd4",
+"classorg_1_1lflang_1_1diagram_1_1synthesis_1_1styles_1_1LinguaFrancaShapeExtensions.html#adcee3dc326f697516160c848c3732a5f",
+"classorg_1_1lflang_1_1federated_1_1generator_1_1FederateInstance.html#a0f119bf8898184d899461ea0c62116bd",
+"classorg_1_1lflang_1_1generator_1_1Argument.html#a404f9d87d34be5688399b628dfaaf8a8",
+"classorg_1_1lflang_1_1generator_1_1ModeInstance.html#ac379d6bf5321bb1fa1cbc1e8db1f4009",
+"classorg_1_1lflang_1_1generator_1_1ReactorInstance.html#a4212a490fd977e28ba507c70af6b1bd9",
+"classorg_1_1lflang_1_1generator_1_1WatchdogInstance.html#a6d6af7cccc27c21f342d765f21ca7712",
+"classorg_1_1lflang_1_1generator_1_1c_1_1CUtil.html#a4b9cee042cd11af59a76d0893403d21b",
+"classorg_1_1lflang_1_1generator_1_1python_1_1PyFileConfig.html#aaadd154f0fdb26cd627f67f3cbbe8112",
+"classorg_1_1lflang_1_1graph_1_1DirectedGraph.html#a64d921937ae05f6c2639fcf066fe250e",
+"classorg_1_1lflang_1_1target_1_1property_1_1CargoDependenciesProperty.html#ac340310011200e10f311d2fe985be828",
+"classorg_1_1lflang_1_1target_1_1property_1_1CoordinationProperty.html#ae91c05dae9df2fc924ba84e4072e2087",
+"classorg_1_1lflang_1_1target_1_1property_1_1NoRuntimeValidationProperty.html#ab121b5771b3f4f1e527438912b64d649",
+"classorg_1_1lflang_1_1target_1_1property_1_1SingleThreadedProperty.html#a7f6fdee8910285230340bcd7a52f3ade",
+"classorg_1_1lflang_1_1target_1_1property_1_1type_1_1SchedulerType.html",
+"classorg_1_1lflang_1_1tests_1_1compiler_1_1LinguaFrancaValidationTest.html#a70f05bee5b7daccaba83e0ea6bedd333",
+"classorg_1_1lflang_1_1tests_1_1runtime_1_1CPatmosTest.html#ad25d62612518ff3bcbbef416500bf577",
+"classorg_1_1lflang_1_1tests_1_1runtime_1_1RustTest.html#aab4725f7eda0dbd2a3162800dc6ab7d5",
+"classorg_1_1lflang_1_1validation_1_1LFValidator.html#af8f6cbae11f3028066bb2ff14ccb19ab",
+"enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1PrimitiveType.html#a66d17dd407b9fd0d916f851f79f998a4",
+"interfaceorg_1_1lflang_1_1analyses_1_1c_1_1CAstVisitor.html#ad216c614966edbe1bfc6cb0f70ca56de"
+];
+
+var SYNCONMSG = 'click to disable panel synchronization';
+var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';
