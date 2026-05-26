@@ -5,7 +5,7 @@ reactor Parent(a: i32 = 0) {
 }
 
 reactor T(b: i32 = 0) {
-  state b = b
+  state b = b 
   output out: i32
 
   reaction(startup) -> out {=
@@ -14,14 +14,17 @@ reactor T(b: i32 = 0) {
   =}
 }
 
-reactor Child extends Parent {
+reactor Child (b: i32 = 0, c:i32 = 0) extends Parent {
   output out: i32
-  t = new T(b=a)
+  
+  // not working
+  t = new T(b = a)
   t.out -> out
 }
 
 main reactor {
-  c1 = new Child(a=42)
+  p1 = new Parent(a = 2)
+  c1 = new Child(a = 42)
 
   reaction(c1.out) {=
     println!("c1.out: {}", ctx.get(c1__out).unwrap());

@@ -1,44 +1,44 @@
-target Rust {
-  fast: true
+target Rust { 
+    fast: true
 }
 
 reactor Source {
-  logical action foo: i32
-  output y: i32
+    logical action foo: i32
+    output y: i32
 
-  reaction(foo) -> y {=
-    ctx.set(y, ctx.get(foo).unwrap());
-  =}
+    reaction(foo) -> y {=
+        ctx.set(y, ctx.get(foo).unwrap());
+    =}
 }
 
 reactor SourceExtended extends Source {
-  reaction(startup) -> foo {=
-    ctx.schedule_with_v(foo, Some(42), Asap);
-  =}
+    reaction(startup) -> foo {=
+        ctx.schedule_with_v(foo, Some(42), Asap);
+    =}
 }
 
 reactor Test {
-  input x: i32
-  state count: i32 = 0
+    input x: i32
+    state count: i32 = 0
 
-  reaction(x) {=
-    self.count += 1;
-    println!("Recived {}", ctx.get(x).unwrap());
-    if ctx.get(x).unwrap() != 42 {
-        eprintln!("FAILURE: Expected 42");
-        ctx.request_stop(Asap);
-    }
-  =}
+    reaction(x) {=
+        self.count +=1;
+        println!("Recived {}", ctx.get(x).unwrap());
+        if ctx.get(x).unwrap() != 42 {
+            eprintln!("FAILURE: Expected 42");
+            ctx.request_stop(Asap);
+        }
+    =}
 
-  reaction(shutdown) {=
+    reaction(shutdown) {=
     if self.count == 0 {
         eprintln!("FAILURE: No data received.");
         }
-  =}
+    =}
 }
 
 main reactor {
-  s = new SourceExtended()
-  d = new Test()
-  s.y -> d.x
+    s = new SourceExtended()
+    d = new Test()
+    s.y -> d.x
 }

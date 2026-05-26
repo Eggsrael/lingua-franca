@@ -539,113 +539,194 @@ object RustModelBuilder {
         )
 
     private fun makeReactorInfos(reactors: List<Reactor>): List<ReactorInfo> =
-        reactors.map { processReactor(it, isInherited = false) }
+        reactors.map { reactor ->
+            //
+            val inheritedR = reactor.superClasses.map { it.toDefinition() }
+            val inheritedReactors = makeInheritedReactorInfos(inheritedR)
+            val inheritedReactions = inheritedReactors.flatMap { it.reactions }
 
-    private fun processReactor(reactor: Reactor, isInherited: Boolean): ReactorInfo {
-        val fullReactor = if (isInherited) emptyList() else reactor.superClasses.map {it.toDefinition()}
-        val fullReactorInfos = fullReactor.map {processReactor(it, isInherited=true)}
-        val fullReactions = fullReactorInfos.flatMap { it.reactions}
+            val components = mutableMapOf<String, ReactorComponent>()
+            val allComponents: List<Variable> = reactor.allComponents() + inheritedR.flatMap { it.allComponents() }
+            for (component in allComponents) {
+                val irObj = ReactorComponent.from(component)
+                components[irObj.lfName] = irObj
+            }
 
-        val allComponents = reactor.allComponents() + fullReactor.flatMap { it.allComponents() }
-        val components = allComponents.map { ReactorComponent.from(it) }.associateBy { it.lfName }
+            val reactions = reactor.reactions.map { n: Reaction ->
+                fun makeDeps(depKind: Reaction.() -> List<VarRef>): Set<ReactorComponent> =
+                    n.depKind().mapTo(mutableSetOf()) {
+                        val variable = it.variable
+                        val container = it.container
+                        if (container is Instantiation && variable is Port) {
+                            val formalType = RustTypes.getTargetType(variable.type)
+                            ChildPortReference(
+                                childLfName = container.name,
+                                lfName = variable.name,
+                                isInput = variable is Input,
+                                dataType = container.reactor.instantiateType(formalType, it.container.typeArgs),
+                                widthSpecMultiport = variable.widthSpec?.toRustExpr(),
+                                widthSpecChild = container.widthSpec?.toRustExpr(),
+                            )
+                        } else {
+                            components[variable.name] ?: throw UnsupportedGeneratorFeatureException(
+                                "Dependency on $it"
+                            )
+                        }
+                    }
 
-        val inheritedFromName = if (isInherited) reactor.name else null
-        val reactions = reactor.reactions.map {it.toReactionInfo(components, inheritedFromName )}
+                ReactionInfo(
+                    idx = n.indexInContainer,
+                    allDependencies = EnumMap<DepKind, Set<ReactorComponent>>(DepKind::class.java).apply {
+                        this[DepKind.Triggers] = makeDeps { triggers.filterIsInstance<VarRef>() }
+                        this[DepKind.Uses] = makeDeps { sources }
+                        this[DepKind.Effects] = makeDeps { effects }
+                    },
+                    body = n.code.toText(),
+                    isStartup = n.triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.STARTUP },
+                    isShutdown = n.triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.SHUTDOWN },
+                    debugLabel = AttributeUtils.getLabel(n),
+                    loc = n.locationInfo().let {
+                        // remove code block
+                        it.copy(lfText = it.lfText.replace(TARGET_BLOCK_R, "{= ... =}"))
+                    }
+                )
+            }
 
-        val portReferences =
-            reactions.flatMap { it.allDependencies.values }.flatten()
-                .filterIsInstance<ChildPortReference>().toSet()
+            val portReferences =
+                reactions.flatMap { it.allDependencies.values }.flatten()
+                    .filterIsInstance<ChildPortReference>().toSet()
 
-        // fullReactions + reactions allows for the inherited reactions to be ran first as react_0 will run before react_1.
-        val allReactions = ( fullReactions + reactions).mapIndexed { newIdx, info -> info.copy(idx = newIdx) }
+            // loc is required. use loc to dictate weather or not the reactor has a nestedInstance inherits something
+            //val nestedInstances = reactor.allInstantiations.map { if (inheritedReactors.map { it.names }.contains(it.name)) { } }
 
-        return ReactorInfo(
-            lfName = reactor.name,
-            loc = reactor.locationInfo().let{
-                it.copy(lfText = it.lfText.replace(BLOCK_R, "{ ... }"))
-            },
-            globalId = reactor.globalId,
-            reactions = allReactions,
-            otherComponents = components.values.toSet()
-                    + portReferences
-                    + fullReactorInfos.flatMap { it.otherComponents },
-            isMain = reactor.isMain,
-            typeParamList = reactor.typeParms.map { it.toTypeParamInfo() } + fullReactorInfos.flatMap { it.typeParamList },
-            preambles = reactor.preambles.map { it.code.toText() } + fullReactorInfos.flatMap { it.preambles },
-            stateVars = reactor.stateVars.map {it.toStateVar()} + fullReactorInfos.flatMap { it.stateVars },
-            nestedInstances = reactor.instantiations.map {it.toModel()} + fullReactorInfos.flatMap { it.nestedInstances },
-            connections = reactor.connections + fullReactorInfos.flatMap { it.connections },
-            ctorParams = reactor.parameters.map { it.toCtorParamInfo()} + fullReactorInfos.flatMap { it.ctorParams },
-        )
-    }
-
-    private fun Reaction.toReactionInfo(components: Map<String, ReactorComponent>, inheritedFromName: String?): ReactionInfo {
-        fun makeDeps(depKind: Reaction.() -> List<VarRef>): Set<ReactorComponent> =
-            depKind().mapTo(mutableSetOf()) {
-                val variable = it.variable
-                val container = it.container
-                if (container is Instantiation && variable is Port) {
-                    val formalType = RustTypes.getTargetType(variable.type)
-                    ChildPortReference(
-                        childLfName = container.name,
-                        lfName = variable.name,
-                        isInput = variable is Input,
-                        dataType = container.reactor.instantiateType(formalType, it.container.typeArgs),
-                        widthSpecMultiport = variable.widthSpec?.toRustExpr(),
-                        widthSpecChild = container.widthSpec?.toRustExpr(),
+            val allReactions = (reactions + inheritedReactions).mapIndexed { newIdx, info -> info.copy(idx = newIdx)  }
+            ReactorInfo(
+                lfName = reactor.name,
+                loc = reactor.locationInfo().let {
+                    // remove body
+                    it.copy(lfText = it.lfText.replace(BLOCK_R, "{ ... }"))
+                },
+                globalId = reactor.globalId,
+                reactions = allReactions,
+                otherComponents = components.values.toSet() + portReferences + inheritedReactors.flatMap { it.otherComponents },
+                isMain = reactor.isMain,
+                typeParamList = (reactor.typeParms.map {
+                    TypeParamInfo(targetCode = it.toText(), it.identifier, it.locationInfo())
+                } + inheritedReactors.flatMap { it.typeParamList }),
+                preambles = reactor.preambles.map { it.code.toText() } + inheritedReactors.flatMap { it.preambles },
+                stateVars = (reactor.stateVars.map {
+                    StateVarInfo(
+                        lfName = it.name,
+                        type = RustTypes.getTargetType(it.type, it.init),
+                        init = RustTypes.getTargetInitializer(it.init, it.type)
                     )
-                } else {
-                    components[variable.name] ?: throw UnsupportedGeneratorFeatureException(
-                        "Dependency on $it"
+                } + inheritedReactors.flatMap { it.stateVars }),
+                nestedInstances = reactor.instantiations.map { it.toModel() } + inheritedReactors.flatMap { it.nestedInstances },
+                connections = reactor.connections + inheritedReactors.flatMap { it.connections },
+                ctorParams = reactor.parameters.map {
+                    CtorParamInfo(
+                        lfName = it.name,
+                        type = RustTypes.getTargetType(it.type, it.init),
+                        defaultValue = RustTypes.getTargetInitializer(it.init, it.type),
+                        documentation = null, // todo
+                        isTime = it.inferredType.isTime,
+                        defaultValueAsTimeValue = ASTUtils.getDefaultAsTimeValue(it),
+                    )
+                } + inheritedReactors.flatMap { it.ctorParams }
+            )
+        }
+
+    private fun makeInheritedReactorInfos(reactors: List<Reactor>): List<ReactorInfo> =
+        reactors.map { reactor ->
+            val components = mutableMapOf<String, ReactorComponent>()
+            val allComponents: List<Variable> = reactor.allComponents()
+            for (component in allComponents) {
+                val irObj = ReactorComponent.from(component)
+                components[irObj.lfName] = irObj
+            }
+            val reactions = reactor.reactions.map { n: Reaction ->
+                fun makeDeps(depKind: Reaction.() -> List<VarRef>): Set<ReactorComponent> =
+                    n.depKind().mapTo(mutableSetOf()) {
+                        val variable = it.variable
+                        val container = it.container
+                        if (container is Instantiation && variable is Port) {
+                            val formalType = RustTypes.getTargetType(variable.type)
+                            ChildPortReference(
+                                childLfName = container.name,
+                                lfName = variable.name,
+                                isInput = variable is Input,
+                                dataType = container.reactor.instantiateType(formalType, it.container.typeArgs),
+                                widthSpecMultiport = variable.widthSpec?.toRustExpr(),
+                                widthSpecChild = container.widthSpec?.toRustExpr(),
+                            )
+                        } else {
+                            components[variable.name] ?: throw UnsupportedGeneratorFeatureException(
+                                "Dependency on $it"
+                            )
+                        }
+                    }
+                ReactionInfo(
+                    idx = n.indexInContainer,
+                    allDependencies = EnumMap<DepKind, Set<ReactorComponent>>(DepKind::class.java).apply {
+                        this[DepKind.Triggers] = makeDeps { triggers.filterIsInstance<VarRef>() }
+                        this[DepKind.Uses] = makeDeps { sources }
+                        this[DepKind.Effects] = makeDeps { effects }
+                    },
+                    body = n.code.toText(),
+                    isStartup = n.triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.STARTUP },
+                    isShutdown = n.triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.SHUTDOWN },
+                    debugLabel = AttributeUtils.getLabel(n),
+                    loc = n.locationInfo().let {
+                        // remove code block
+                        it.copy(lfText = it.lfText.replace(TARGET_BLOCK_R, "{= ... =} - Inherited from Reactor ${reactor.name}"))
+                    }
+                )
+            }
+
+            val portReferences =
+                reactions.flatMap { it.allDependencies.values }.flatten()
+                    .filterIsInstance<ChildPortReference>().toSet()
+
+            ReactorInfo(
+                lfName = reactor.name,
+                loc = reactor.locationInfo().let {
+                    // remove body
+                    it.copy(lfText = it.lfText.replace(BLOCK_R, "{ ... } - Inherited from Reactor ${reactor.name}"))
+                },
+                globalId = reactor.globalId,
+                reactions = reactions,
+                otherComponents = components.values.toSet() + portReferences,
+                isMain = reactor.isMain,
+                typeParamList = reactor.typeParms.map {
+                    TypeParamInfo(targetCode = it.toText(), it.identifier, it.locationInfo())
+                },
+                preambles = reactor.preambles.map { it.code.toText() },
+                stateVars = reactor.stateVars.map {
+                    StateVarInfo(
+                        lfName = it.name,
+                        type = RustTypes.getTargetType(it.type, it.init),
+                        init = RustTypes.getTargetInitializer(it.init, it.type)
+                    )
+                },
+                nestedInstances = reactor.instantiations.map { it.toModel() },
+                connections = reactor.connections,
+                ctorParams = reactor.parameters.map {
+                    CtorParamInfo(
+                        lfName = it.name,
+                        type = RustTypes.getTargetType(it.type, it.init),
+                        defaultValue = RustTypes.getTargetInitializer(it.init, it.type),
+                        documentation = null, // todo
+                        isTime = it.inferredType.isTime,
+                        defaultValueAsTimeValue = ASTUtils.getDefaultAsTimeValue(it),
                     )
                 }
-            }
-
-        val suffix = inheritedFromName?.let{ " - Inherited from Reactor $it"} ?: ""
-
-        return ReactionInfo(
-            idx = indexInContainer,
-            allDependencies = EnumMap<DepKind, Set<ReactorComponent>>(DepKind::class.java).apply {
-                this[DepKind.Triggers] = makeDeps { triggers.filterIsInstance<VarRef>() }
-                this[DepKind.Uses] = makeDeps { sources }
-                this[DepKind.Effects] = makeDeps { effects }
-            },
-            body = code.toText(),
-            isStartup = triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.STARTUP },
-            isShutdown = triggers.any { it is BuiltinTriggerRef && it.type == BuiltinTrigger.SHUTDOWN },
-            debugLabel = AttributeUtils.getLabel(this),
-            loc = locationInfo().let {
-                it.copy(lfText = it.lfText.replace(TARGET_BLOCK_R, "{= ... =}$suffix"))
-            }
-        )
-    }
-
-    private fun TypeParm.toTypeParamInfo() = TypeParamInfo(
-        targetCode = toText(),
-        lfName = identifier,
-        loc = locationInfo()
-    )
-
-    private fun StateVar.toStateVar() = StateVarInfo(
-        lfName = name,
-        type = RustTypes.getTargetType(type, init),
-        init = RustTypes.getTargetInitializer(init, type)
-    )
-
-    private fun Parameter.toCtorParamInfo() = CtorParamInfo(
-        lfName = name,
-        type = RustTypes.getTargetType(type, init),
-        defaultValue = RustTypes.getTargetInitializer(init, type),
-        documentation = null,
-        isTime = inferredType.isTime,
-        defaultValueAsTimeValue = ASTUtils.getDefaultAsTimeValue(this)
-    )
+            )
+        }
 
     private fun Instantiation.toModel(): NestedReactorInstance {
 
         val byName = parameters.associateBy { it.lhs.name }
-
-        val args = ASTUtils.allParameters(reactor).associate { ithParam ->
+        val args = reactor.parameters.associate { ithParam ->
             // use provided argument
             val value = byName[ithParam.name]?.let { RustTypes.getTargetInitializer(it.rhs, ithParam.type) }
                 ?: if (ithParam.name == "bank_index" && this.isBank) "bank_index" else null // special value
