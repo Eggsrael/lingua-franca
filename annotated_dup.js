@@ -130,7 +130,9 @@ var annotated_dup =
             [ "FedTargetEmitter", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedTargetEmitter.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedTargetEmitter" ],
             [ "FedUtils", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedUtils.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedUtils" ],
             [ "LineAdjustingMessageReporter", "classorg_1_1lflang_1_1federated_1_1generator_1_1LineAdjustingMessageReporter.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1LineAdjustingMessageReporter" ],
-            [ "SynchronizedMessageReporter", "classorg_1_1lflang_1_1federated_1_1generator_1_1SynchronizedMessageReporter.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1SynchronizedMessageReporter" ]
+            [ "SSTGenerator", "classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator" ],
+            [ "SynchronizedMessageReporter", "classorg_1_1lflang_1_1federated_1_1generator_1_1SynchronizedMessageReporter.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1SynchronizedMessageReporter" ],
+            [ "TLSGenerator", "classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html", "classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator" ]
           ] ],
           [ "launcher", "namespaceorg_1_1lflang_1_1federated_1_1launcher.html", [
             [ "BuildConfig", "classorg_1_1lflang_1_1federated_1_1launcher_1_1BuildConfig.html", "classorg_1_1lflang_1_1federated_1_1launcher_1_1BuildConfig" ],
@@ -143,6 +145,9 @@ var annotated_dup =
           [ "serialization", "namespaceorg_1_1lflang_1_1federated_1_1serialization.html", [
             [ "FedCustomPythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedCustomPythonSerialization.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedCustomPythonSerialization" ],
             [ "FedNativePythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedNativePythonSerialization.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedNativePythonSerialization" ],
+            [ "FedProtoCSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization" ],
+            [ "FedProtoCSerializationTest", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest" ],
+            [ "FedProtoPythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization" ],
             [ "FedROS2CPPSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedROS2CPPSerialization.html", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedROS2CPPSerialization" ],
             [ "FedSerialization", "interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html", "interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization" ],
             [ "SupportedSerializers", "enumorg_1_1lflang_1_1federated_1_1serialization_1_1SupportedSerializers.html", "enumorg_1_1lflang_1_1federated_1_1serialization_1_1SupportedSerializers" ]
@@ -339,6 +344,7 @@ var annotated_dup =
             [ "SchedulerProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SchedulerProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1SchedulerProperty" ],
             [ "SingleFileProjectProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SingleFileProjectProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1SingleFileProjectProperty" ],
             [ "SingleThreadedProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SingleThreadedProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1SingleThreadedProperty" ],
+            [ "SSTProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty" ],
             [ "StringListProperty", "classorg_1_1lflang_1_1target_1_1property_1_1StringListProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1StringListProperty" ],
             [ "StringProperty", "classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1StringProperty" ],
             [ "TargetProperty", "classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html", "classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty" ],
@@ -385,6 +391,7 @@ var annotated_dup =
             [ "CTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest" ],
             [ "CVerifierTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CVerifierTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CVerifierTest" ],
             [ "CZephyrTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CZephyrTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CZephyrTest" ],
+            [ "PolyglotTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest" ],
             [ "PythonTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest" ],
             [ "RustTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1RustTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1RustTest" ],
             [ "TypeScriptTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1TypeScriptTest.html", "classorg_1_1lflang_1_1tests_1_1runtime_1_1TypeScriptTest" ]

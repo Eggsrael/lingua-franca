@@ -285,6 +285,8 @@ var hierarchy =
     [ "org.lflang.federated.generator.FedReactorEmitter", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedReactorEmitter.html", null ],
     [ "org.lflang.federated.generator.FedTargetEmitter", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedTargetEmitter.html", null ],
     [ "org.lflang.federated.generator.FedUtils", "classorg_1_1lflang_1_1federated_1_1generator_1_1FedUtils.html", null ],
+    [ "org.lflang.federated.generator.SSTGenerator", "classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html", null ],
+    [ "org.lflang.federated.generator.TLSGenerator", "classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html", null ],
     [ "org.lflang.federated.launcher.BuildConfig", "classorg_1_1lflang_1_1federated_1_1launcher_1_1BuildConfig.html", [
       [ "org.lflang.federated.launcher.CBuildConfig", "classorg_1_1lflang_1_1federated_1_1launcher_1_1CBuildConfig.html", null ],
       [ "org.lflang.federated.launcher.PyBuildConfig", "classorg_1_1lflang_1_1federated_1_1launcher_1_1PyBuildConfig.html", null ],
@@ -292,9 +294,12 @@ var hierarchy =
     ] ],
     [ "org.lflang.federated.launcher.FedLauncherGenerator", "classorg_1_1lflang_1_1federated_1_1launcher_1_1FedLauncherGenerator.html", null ],
     [ "org.lflang.federated.launcher.RtiConfig", "classorg_1_1lflang_1_1federated_1_1launcher_1_1RtiConfig.html", null ],
+    [ "org.lflang.federated.serialization.FedProtoCSerializationTest", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest.html", null ],
     [ "org.lflang.federated.serialization.FedSerialization", "interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html", [
       [ "org.lflang.federated.serialization.FedCustomPythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedCustomPythonSerialization.html", null ],
       [ "org.lflang.federated.serialization.FedNativePythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedNativePythonSerialization.html", null ],
+      [ "org.lflang.federated.serialization.FedProtoCSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html", null ],
+      [ "org.lflang.federated.serialization.FedProtoPythonSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html", null ],
       [ "org.lflang.federated.serialization.FedROS2CPPSerialization", "classorg_1_1lflang_1_1federated_1_1serialization_1_1FedROS2CPPSerialization.html", null ]
     ] ],
     [ "org.lflang.federated.serialization.SupportedSerializers", "enumorg_1_1lflang_1_1federated_1_1serialization_1_1SupportedSerializers.html", null ],
@@ -553,6 +558,9 @@ var hierarchy =
     [ "org.lflang.target.property.TargetProperty&lt; Scheduler, SchedulerType &gt;", "classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html", [
       [ "org.lflang.target.property.SchedulerProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SchedulerProperty.html", null ]
     ] ],
+    [ "org.lflang.target.property.TargetProperty&lt; SSTOptions, DictionaryType &gt;", "classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html", [
+      [ "org.lflang.target.property.SSTProperty", "classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html", null ]
+    ] ],
     [ "org.lflang.target.property.TargetProperty&lt; String, PrimitiveType &gt;", "classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html", [
       [ "org.lflang.target.property.FedSetupProperty", "classorg_1_1lflang_1_1target_1_1property_1_1FedSetupProperty.html", null ],
       [ "org.lflang.target.property.StringProperty", "classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html", [
@@ -582,6 +590,7 @@ var hierarchy =
       [ "org.lflang.target.property.CoordinationOptionsProperty.CoordinationOption", "enumorg_1_1lflang_1_1target_1_1property_1_1CoordinationOptionsProperty_1_1CoordinationOption.html", null ],
       [ "org.lflang.target.property.DockerProperty.DockerOption", "enumorg_1_1lflang_1_1target_1_1property_1_1DockerProperty_1_1DockerOption.html", null ],
       [ "org.lflang.target.property.PlatformProperty.PlatformOption", "enumorg_1_1lflang_1_1target_1_1property_1_1PlatformProperty_1_1PlatformOption.html", null ],
+      [ "org.lflang.target.property.SSTProperty.SSTOption", "enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html", null ],
       [ "org.lflang.target.property.TracePluginProperty.TracePluginOption", "enumorg_1_1lflang_1_1target_1_1property_1_1TracePluginProperty_1_1TracePluginOption.html", null ],
       [ "org.lflang.target.property.TracingProperty.TracingOption", "enumorg_1_1lflang_1_1target_1_1property_1_1TracingProperty_1_1TracingOption.html", null ]
     ] ],
@@ -641,6 +650,7 @@ var hierarchy =
         [ "org.lflang.tests.RuntimeTest", "classorg_1_1lflang_1_1tests_1_1RuntimeTest.html", [
           [ "org.lflang.tests.runtime.CTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html", null ],
           [ "org.lflang.tests.runtime.CppTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1CppTest.html", null ],
+          [ "org.lflang.tests.runtime.PolyglotTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html", null ],
           [ "org.lflang.tests.runtime.PythonTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest.html", null ],
           [ "org.lflang.tests.runtime.RustTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1RustTest.html", null ],
           [ "org.lflang.tests.runtime.TypeScriptTest", "classorg_1_1lflang_1_1tests_1_1runtime_1_1TypeScriptTest.html", null ]

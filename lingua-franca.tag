@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile doxygen_version="1.16.1">
+<tagfile doxygen_version="1.17.0">
   <compound kind="class">
     <name>org::lflang::analyses::c::AbstractAstVisitor</name>
     <filename>classorg_1_1lflang_1_1analyses_1_1c_1_1AbstractAstVisitor.html</filename>
@@ -11985,6 +11985,13 @@
       <arglist>(LFGeneratorContext context, Resource federateResource)</arglist>
     </member>
     <member kind="function">
+      <type></type>
+      <name>FederateTargetConfig</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederateTargetConfig.html</anchorfile>
+      <anchor>aa6bfaa3f2f6562fdf21c6ede1088a1fb</anchor>
+      <arglist>(LFGeneratorContext context, Resource federateResource, Target overrideTarget)</arglist>
+    </member>
+    <member kind="function">
       <type>Optional&lt; TargetProperty&lt;?, ?&gt; &gt;</type>
       <name>forName</name>
       <anchorfile>classorg_1_1lflang_1_1target_1_1TargetConfig.html</anchorfile>
@@ -12330,6 +12337,48 @@
       <name>getSrcPath</name>
       <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
       <anchor>a1c3b3a2bc51b9e1fb31706b6561a09fc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTAuthPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>a20639daf6373e9c47fb8c51739775880</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTConfigPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>a69d5336f54e4884b5f73a108e69e317e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTCredentialsPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>aa05c8b1ae59a4b1a7ddcd0a830dfabdb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTGraphsPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>a0267161ee0cf547f96b6ed1b05486ac7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>ab0eaf823c702f02ff526bd8ea881f851</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>Path</type>
+      <name>getSSTPolicyPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1FederationFileConfig.html</anchorfile>
+      <anchor>a422fa9380b60fd6a80fd090d60399f96</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -12682,6 +12731,45 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>org::lflang::federated::generator::SSTGenerator</name>
+    <filename>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setupSST</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</anchorfile>
+      <anchor>a710302132d41b2091288c8581d3d73b0</anchor>
+      <arglist>(List&lt; FederateInstance &gt; federates, RtiConfig rtiConfig)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSTGenerator</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</anchorfile>
+      <anchor>ac46e4090db498dd2b74fbd9a647cb3a5</anchor>
+      <arglist>(FederationFileConfig fileConfig, MessageReporter messageReporter, LFGeneratorContext context)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>getRemoteBasePath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</anchorfile>
+      <anchor>a8baf4748e3bb7630be7d7042682b0d41</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Path</type>
+      <name>getSSTConfigPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</anchorfile>
+      <anchor>aa7b70df939d0f39fbe142981ae12bd0c</anchor>
+      <arglist>(FederationFileConfig fileConfig, String name)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>getSSTRemoteBasePath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1SSTGenerator.html</anchorfile>
+      <anchor>ab95f7154a53069cb192e1c5bba783180</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>org::lflang::federated::generator::SynchronizedMessageReporter</name>
     <filename>classorg_1_1lflang_1_1federated_1_1generator_1_1SynchronizedMessageReporter.html</filename>
     <base>org.lflang.MessageReporterBase</base>
@@ -12796,6 +12884,73 @@
       <anchorfile>classorg_1_1lflang_1_1MessageReporterBase.html</anchorfile>
       <anchor>a365b78fc2a5d81158e450ea7aea5821b</anchor>
       <arglist>(Stage2 e)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>org::lflang::federated::generator::TLSGenerator</name>
+    <filename>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>setupTLS</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a8d5c32b9e188a22232447d36c5930b50</anchor>
+      <arglist>(List&lt; FederateInstance &gt; federates)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>TLSGenerator</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>ab60f977bd5e8dbfe1ea72abb982ad2f1</anchor>
+      <arglist>(FederationFileConfig fileConfig, MessageReporter messageReporter, LFGeneratorContext context)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Path</type>
+      <name>getLocalCertPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a2a2aa1d8013c24b43bfbc40e27288766</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Path</type>
+      <name>getLocalCredentialsRoot</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a1b352f25eb34d97e5eca200b8a2552dc</anchor>
+      <arglist>(FederationFileConfig fileConfig)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Path</type>
+      <name>getLocalEntityCredentialsDir</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>af341dad50ace29b41e4bc5bee11a8411</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static Path</type>
+      <name>getLocalKeyPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>ad3d43452a06997979b3d40452f73fdd7</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>getRelativeRemoteCertPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a67c1fd0ef271a7e48155418564973914</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>getRelativeRemoteCredentialsDir</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a975a7c6e87dc28286a393ebfb1aafb51</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>getRelativeRemoteKeyPath</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1generator_1_1TLSGenerator.html</anchorfile>
+      <anchor>a3e1669f381f27fa0981a34762d1f596c</anchor>
+      <arglist>(FederationFileConfig fileConfig, String entityName)</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -13238,6 +13393,202 @@
       <name>deserializedVarName</name>
       <anchorfile>interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html</anchorfile>
       <anchor>ad26ff751148d3f622edd98d54a6c27bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>serializedVarName</name>
+      <anchorfile>interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html</anchorfile>
+      <anchor>a6a7cc5ce4312c556f0a277cb0b2792c8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>org::lflang::federated::serialization::FedProtoCSerialization</name>
+    <filename>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</filename>
+    <base>org.lflang.federated.serialization.FedSerialization</base>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateCompilerExtensionForSupport</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>af397534c7d424acad9681d30143aaa5a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateNetworkDeserializerCode</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>ad413bc7935759b83e361a4e0e4f3e8c2</anchor>
+      <arglist>(String varName, String targetType)</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateNetworkSerializerCode</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a9b06fe522bfccaf2c14b19a0f0116e48</anchor>
+      <arglist>(String varName, String originalType)</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generatePortAssignmentCode</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a2238b6426362e441358f697cab92d7ee</anchor>
+      <arglist>(String receiveRef)</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generatePreambleForSupport</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a6e581ab2a891b7d1cccd775ffd8e5729</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>isCompatible</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>aff4adafbafdeb101be81ed2638016adb</anchor>
+      <arglist>(GeneratorBase generator)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>serializedBufferLength</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a210f33db0df287b029efac5497a597de</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>serializedBufferVar</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a3b09ac6e6842784809dfdcaea49dac11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>protobufCFunctionPrefix</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>ac67b13b30794e6e281746007fb8bacf0</anchor>
+      <arglist>(String messageType)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>stripPointer</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>a9a6d963b39ea7be7e2f7c15cf5cb49bb</anchor>
+      <arglist>(String type)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>deserializedVarName</name>
+      <anchorfile>interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html</anchorfile>
+      <anchor>ad26ff751148d3f622edd98d54a6c27bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>PROTOBUF_DESTRUCTOR_NAME</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerialization.html</anchorfile>
+      <anchor>af537618cee02823279588712336bcb99</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>serializedVarName</name>
+      <anchorfile>interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html</anchorfile>
+      <anchor>a6a7cc5ce4312c556f0a277cb0b2792c8</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>org::lflang::federated::serialization::FedProtoCSerializationTest</name>
+    <filename>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>protobufCFunctionPrefix</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest.html</anchorfile>
+      <anchor>a9a6cd07ce795db0e66effcdaa9d293c8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>stripPointer</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoCSerializationTest.html</anchorfile>
+      <anchor>a229ab4f682b306d8d77519e2e1bbc263</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>org::lflang::federated::serialization::FedProtoPythonSerialization</name>
+    <filename>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</filename>
+    <base>org.lflang.federated.serialization.FedSerialization</base>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateCompilerExtensionForSupport</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a00e69532b369b25743a83be613179011</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateNetworkDeserializerCode</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a489f893a0facc721d014a15534c59b2c</anchor>
+      <arglist>(String varName, String targetType)</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generateNetworkSerializerCode</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>ac26f8bc86b0382f3d0e7fc9781c79987</anchor>
+      <arglist>(String varName, String originalType)</arglist>
+    </member>
+    <member kind="function">
+      <type>StringBuilder</type>
+      <name>generatePreambleForSupport</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a380a138d3771527a2d5970eb8d735f55</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>isCompatible</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>af0a9a37bddf949ad698677095cfaa249</anchor>
+      <arglist>(GeneratorBase generator)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>serializedBufferLength</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a1ef62efd69ce5b26348aa4727655f9f5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>serializedBufferVar</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a2ef17ce1f56d165fa047b3758cee1a4e</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>BUF_VAR</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>a77f1c5499c6ee18c5ff3a810c4ac6b30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>deserializedVarName</name>
+      <anchorfile>interfaceorg_1_1lflang_1_1federated_1_1serialization_1_1FedSerialization.html</anchorfile>
+      <anchor>ad26ff751148d3f622edd98d54a6c27bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>LEN_VAR</name>
+      <anchorfile>classorg_1_1lflang_1_1federated_1_1serialization_1_1FedProtoPythonSerialization.html</anchorfile>
+      <anchor>ad512d45a5cef58cd59937c31fbdeacbf</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable" static="yes">
@@ -15422,6 +15773,13 @@
       <name>isFixedSizeArrayType</name>
       <anchorfile>classorg_1_1lflang_1_1generator_1_1c_1_1CUtil.html</anchorfile>
       <anchor>a02d728194b4f1ef10b78b4341359792b</anchor>
+      <arglist>(InferredType type)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static boolean</type>
+      <name>isPointerType</name>
+      <anchorfile>classorg_1_1lflang_1_1generator_1_1c_1_1CUtil.html</anchorfile>
+      <anchor>aca076f3051ed5843f406dd9e5d99b438</anchor>
       <arglist>(InferredType type)</arglist>
     </member>
     <member kind="function" static="yes">
@@ -21149,6 +21507,13 @@
       <name>isFixedSizeArrayType</name>
       <anchorfile>classorg_1_1lflang_1_1generator_1_1c_1_1CUtil.html</anchorfile>
       <anchor>a02d728194b4f1ef10b78b4341359792b</anchor>
+      <arglist>(InferredType type)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static boolean</type>
+      <name>isPointerType</name>
+      <anchorfile>classorg_1_1lflang_1_1generator_1_1c_1_1CUtil.html</anchorfile>
+      <anchor>aca076f3051ed5843f406dd9e5d99b438</anchor>
       <arglist>(InferredType type)</arglist>
     </member>
     <member kind="function" static="yes">
@@ -32361,6 +32726,213 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>org::lflang::target::property::SSTProperty</name>
+    <filename>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</filename>
+    <base>org.lflang.target.property.TargetProperty&lt; SSTOptions, DictionaryType &gt;</base>
+    <class kind="enum">org::lflang::target::property::SSTProperty::SSTOption</class>
+    <member kind="function">
+      <type>Optional&lt; Element &gt;</type>
+      <name>astElementFromConfig</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a6a5c01889646675b2403aba03a9561b1</anchor>
+      <arglist>(TargetConfig config)</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>checkType</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ad2943097a2b239aecb9c0bf4eb2968f6</anchor>
+      <arglist>(KeyValuePair pair, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>equals</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a204b717061ca87ddd71cbc866440af5c</anchor>
+      <arglist>(Object obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>SSTOptions</type>
+      <name>fromAst</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>a31ff2bea2b3f9f86e3dae0512eaf778d</anchor>
+      <arglist>(Element node, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>hashCode</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a29acc44b1e353f4638f22bb3289d7338</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>SSTOptions</type>
+      <name>initialValue</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>a7bd6f951491e96ca283396895da27b22</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromFederate</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a887afc08ede48190976f784b8769b7ea</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromFederation</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a033370849eef3120afd46c4845863e2d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromImport</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ab53684f78f96af96841c92187f131488</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>name</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>a6e09cf4c0b76b6221d9df10cdc2185f7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>final void</type>
+      <name>override</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a2a3ae8487cf2df37b7e3c98a9d594685</anchor>
+      <arglist>(TargetConfig config, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>record</type>
+      <name>SSTOptions</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>aa7eb79f1fb68c5d2b079cd0786adc971</anchor>
+      <arglist>(String rootPath, boolean usePermanentDistKey)</arglist>
+    </member>
+    <member kind="function">
+      <type>Element</type>
+      <name>toAstElement</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>ac3520f2c5150986ad3c67a8d37710cde</anchor>
+      <arglist>(SSTOptions value)</arglist>
+    </member>
+    <member kind="function">
+      <type>abstract Element</type>
+      <name>toAstElement</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a7f6fdee8910285230340bcd7a52f3ade</anchor>
+      <arglist>(T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>toString</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a80cded89b1d2808e307cd4b9991f887b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a74548a3778514c9c3757ee031dae825c</anchor>
+      <arglist>(TargetConfig config, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>validate</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a05712b0e4f6256710f969dfd27a097f3</anchor>
+      <arglist>(TargetConfig config, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="variable">
+      <type>final S</type>
+      <name>type</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ae91c05dae9df2fc924ba84e4072e2087</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final SSTProperty</type>
+      <name>INSTANCE</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>a82ae66a27dfe6c589d6383b1277a2dc8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>T</type>
+      <name>fromJSON</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ac340310011200e10f311d2fe985be828</anchor>
+      <arglist>(JsonElement element, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>SSTOptions</type>
+      <name>fromString</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1SSTProperty.html</anchorfile>
+      <anchor>a6ea8d28c66022bbd5875682f42242f0b</anchor>
+      <arglist>(String string, MessageReporter reporter)</arglist>
+    </member>
+  </compound>
+  <compound kind="enum">
+    <name>org::lflang::target::property::SSTProperty::SSTOption</name>
+    <filename>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</filename>
+    <base>org.lflang.target.property.type.DictionaryType.DictionaryElement</base>
+    <member kind="function">
+      <type>TargetPropertyType</type>
+      <name>getType</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>aa4f2d6f0fcae3a0bb079b84677c85908</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>SSTOption</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>a434591aecc77d63ae784600f600bcad7</anchor>
+      <arglist>(String option, PrimitiveType type)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>toString</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>af121eef83220737e4b9c7289ba51250b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="variable">
+      <type>final String</type>
+      <name>option</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>acf96ce24b6996b58cb4219babb518e79</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>ROOT_PATH</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>a1ca9961120242afe3e1fb788350db25e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>final PrimitiveType</type>
+      <name>type</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>aac569d6cdade118f3dcbae5d1dfb41ef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>USE_PERMANENT_DIST_KEY</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1SSTProperty_1_1SSTOption.html</anchorfile>
+      <anchor>a1cc2709c0ea40c03f42073448a437cc6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>org::lflang::target::property::StringListProperty</name>
     <filename>classorg_1_1lflang_1_1target_1_1property_1_1StringListProperty.html</filename>
     <base>org.lflang.target.property.TargetProperty&lt; List&lt; String &gt;, UnionType &gt;</base>
@@ -33772,9 +34344,23 @@
     </member>
     <member kind="variable">
       <type></type>
+      <name>SST</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1CommunicationModeType_1_1CommunicationMode.html</anchorfile>
+      <anchor>a2916aa39281b87be918225d55f05bb54</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
       <name>TCP</name>
       <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1CommunicationModeType_1_1CommunicationMode.html</anchorfile>
       <anchor>af3f864fd4b26e2c9990c1c265afae86e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>TLS</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1CommunicationModeType_1_1CommunicationMode.html</anchorfile>
+      <anchor>a504ffb91362afb7ab541654056af3d84</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -33945,6 +34531,13 @@
       <name>PLATFORM_DICT</name>
       <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1DictionaryType.html</anchorfile>
       <anchor>ada29ca1e43a3c46fd558172b0d98549f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>SST_DICT</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1type_1_1DictionaryType.html</anchorfile>
+      <anchor>a89cc856c70004d16b93b6fb954dc6500</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -35131,6 +35724,13 @@
       <name>CPP</name>
       <anchorfile>enumorg_1_1lflang_1_1target_1_1Target.html</anchorfile>
       <anchor>a4aeea177497099be0b6795577488642a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>Polyglot</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1Target.html</anchorfile>
+      <anchor>ad9ebe7bbe660a79d481464ed97c4d357</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -38349,6 +38949,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>runFederatedTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1CppTest.html</anchorfile>
       <anchor>a6b74cef8752158e81b94c93ec33950a5</anchor>
@@ -38807,6 +39414,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html</anchorfile>
+      <anchor>a16d287649b72ff8fa94ac7e37adac7de</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>runFederatedTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html</anchorfile>
       <anchor>a4dbba3ff54fa4c1084c264dd03de58a9</anchor>
@@ -38838,6 +39452,13 @@
       <name>runNoInliningTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html</anchorfile>
       <anchor>a93e9f8ef51a2b01c230a9579a08adc6c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runSerializationTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1CTest.html</anchorfile>
+      <anchor>adcd1d47df69936ea684070632314e41c</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -39398,6 +40019,298 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>org::lflang::tests::runtime::PolyglotTest</name>
+    <filename>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</filename>
+    <base>org.lflang.tests.RuntimeTest</base>
+    <member kind="function">
+      <type></type>
+      <name>PolyglotTest</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>af7f623db6a3279926cc2c05e5b52a8a9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runAsFederated</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>aa6d225eeb797f819546b7b312452ddc5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runBasicTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>af8985a34eb29eefc73c02cdbf8f646b4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runConcurrentTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a54ba745c485e7b16e43bc00b431ab6bf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runDockerFederatedTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a1c38e986f0dbc5879a169fbb1904bc0a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runDockerTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>ad9413ff2e793fd6ab11b3cf66fcecbc8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runEnclaveTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a38341fb78c02a6b7f767be18683fc4ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runFederatedTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>aea6f9cff40ced567a988e75616019da0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runGenericsTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a27377b800bc57a612c04de9868d27b67</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runModalTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a3fb18e17b3116e83075cdbc478804fef</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runMultiportTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a8e49f1aa20ec390f7e8a3db488e74777</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runNoInliningTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a15dace8210c1f0d9c4dea63696ae7938</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runTargetSpecificTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>a1a4b0a36715cbbafca1d6f67c184a88f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runWithThreadingOff</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>aa761e2df9c6a3b152b105d29f8cf2d6a</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static boolean</type>
+      <name>compatibleWithThreadingOff</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>aab6c0b1f08e0e439dd301d628a8548ae</anchor>
+      <arglist>(TestCategory category)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static TestLevel</type>
+      <name>pathToLevel</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a9538c294f1910e14c75d49476ec1c159</anchor>
+      <arglist>(Path path)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static void</type>
+      <name>runSingleTestAndPrintResults</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ab92abba6f078f75ef0933f7d3e2b2183</anchor>
+      <arglist>(LFTest test, Class&lt;? extends TestBase &gt; testClass, TestLevel level)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static String</type>
+      <name>stackTraceToString</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a28c9f1fdc57f9826c56b1bb335516259</anchor>
+      <arglist>(Throwable t)</arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>THICK_LINE</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a663eca380d65c526a5dc4d4f37dc42f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
+      <name>THIN_LINE</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ac30e35f8c8edd2ca1f2b26e03ddf6ec6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>applyDefaultConfiguration</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>acbbd37d213419ddbc3ee9a577b86b895</anchor>
+      <arglist>(TargetConfig config)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>ProcessBuilder</type>
+      <name>getExecCommand</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ab7eb2f2d3c228ab7984b5a2df5cbe589</anchor>
+      <arglist>(LFTest test)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>GeneratorArguments</type>
+      <name>getGeneratorArguments</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>aab4725f7eda0dbd2a3162800dc6ab7d5</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>final void</type>
+      <name>runTestsAndPrintResults</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>aff3ae7508377e27da65c5deaf4c31534</anchor>
+      <arglist>(Target target, Predicate&lt; TestCategory &gt; selected, TestLevel level, Transformer transformer, Configurator configurator, boolean copy)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>runTestsFor</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a0b6820b95f35eff2cf460e32920bf015</anchor>
+      <arglist>(List&lt; Target &gt; subset, String description, Predicate&lt; TestCategory &gt; selected, Transformer transformer, Configurator configurator, TestLevel level, boolean copy)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>void</type>
+      <name>runTestsForTargets</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a1ebac2651a6dd6b8044d96eb597402d6</anchor>
+      <arglist>(String description, Predicate&lt; TestCategory &gt; selected, Transformer transformer, Configurator configurator, TestLevel level, boolean copy)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>boolean</type>
+      <name>supportsDockerOption</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a8ac7196674344bb76bca35abb0a3528d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>boolean</type>
+      <name>supportsEnclaves</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a07cf00afc85e28b36eea44a4591e370b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>boolean</type>
+      <name>supportsFederatedExecution</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PolyglotTest.html</anchorfile>
+      <anchor>aaab7857de856ac3e3d08c3faa443ebbc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>boolean</type>
+      <name>supportsGenericTypes</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>a016b8abdbd507ba5ce4cbb4bd493bdbf</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>boolean</type>
+      <name>supportsSingleThreadedExecution</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>acf8d6dd5602a2cd1575379119f5909e2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static boolean</type>
+      <name>isLinux</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>aacafa215f9876c94aa4fa896429a5e43</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static boolean</type>
+      <name>isMac</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a349bc196ce85c7b24927a28b0db751b0</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static boolean</type>
+      <name>isWindows</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ab4c75980dccb274f675d183201afde3b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function" protection="protected" static="yes">
+      <type>static void</type>
+      <name>printTestHeader</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ac847b48162a5aa845f798a78465ff5fb</anchor>
+      <arglist>(Target target, String description)</arglist>
+    </member>
+    <member kind="variable" protection="package">
+      <type>JavaIoFileSystemAccess</type>
+      <name>fileAccess</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ad9cea2a81034b6aba70301c2b728b5cf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="package">
+      <type>LFGenerator</type>
+      <name>generator</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>ac2d0777be07d4c6f9590aadae07a3483</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="package">
+      <type>Provider&lt; ResourceSet &gt;</type>
+      <name>resourceSetProvider</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>af44aa1c33c4a2f62a385ae18d2a09541</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="package">
+      <type>TestRegistry</type>
+      <name>testRegistry</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>a0267f19ce7ff14b1a410e2a39b7989c2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" protection="package">
+      <type>IResourceValidator</type>
+      <name>validator</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase.html</anchorfile>
+      <anchor>afc6768563083e4403de7f0d1dd375f68</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>org::lflang::tests::runtime::PythonTest</name>
     <filename>classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest.html</filename>
     <base>org.lflang.tests.RuntimeTest</base>
@@ -39452,6 +40365,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>runFederatedTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest.html</anchorfile>
       <anchor>ad0d85e78679fef1a79e0e0b87dd9b0c8</anchor>
@@ -39483,6 +40403,13 @@
       <name>runNoInliningTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
       <anchor>a15dace8210c1f0d9c4dea63696ae7938</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runSerializationTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1PythonTest.html</anchorfile>
+      <anchor>a99b26969a0dcdb3efdfc9d4482d85884</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -39726,6 +40653,13 @@
       <name>runEnclaveTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
       <anchor>a38341fb78c02a6b7f767be18683fc4ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -40015,6 +40949,13 @@
     </member>
     <member kind="function">
       <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
       <name>runFederatedTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1runtime_1_1TypeScriptTest.html</anchorfile>
       <anchor>a11753bc36220409cadcb8705dedefee0</anchor>
@@ -40296,6 +41237,13 @@
       <name>runEnclaveTests</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
       <anchor>a38341fb78c02a6b7f767be18683fc4ce</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>runFederatedSSTTests</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1RuntimeTest.html</anchorfile>
+      <anchor>abf3a57a094ea7f875fb1b6c54abbfc58</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -41058,6 +42006,13 @@
     </member>
     <member kind="variable" static="yes">
       <type>static final String</type>
+      <name>NO_SERIALIZATION_SUPPORT</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase_1_1Message.html</anchorfile>
+      <anchor>a23e3ca3d84a0734dccb78f1de60a752a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
       <name>NO_SINGLE_THREADED_SUPPORT</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase_1_1Message.html</anchorfile>
       <anchor>aba3bd5b7d98439257469f5dcf602ae85</anchor>
@@ -41261,6 +42216,13 @@
       <name>FEDERATED</name>
       <anchorfile>enumorg_1_1lflang_1_1tests_1_1TestRegistry_1_1TestCategory.html</anchorfile>
       <anchor>ad91680a166aefb9ec3a531936c80af16</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
+      <name>FEDERATED_SST</name>
+      <anchorfile>enumorg_1_1lflang_1_1tests_1_1TestRegistry_1_1TestCategory.html</anchorfile>
+      <anchor>ab1170edab62803de6a68b14dbe9f39b6</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -43173,7 +44135,9 @@
     <class kind="class">org::lflang::federated::generator::FedTargetEmitter</class>
     <class kind="class">org::lflang::federated::generator::FedUtils</class>
     <class kind="class">org::lflang::federated::generator::LineAdjustingMessageReporter</class>
+    <class kind="class">org::lflang::federated::generator::SSTGenerator</class>
     <class kind="class">org::lflang::federated::generator::SynchronizedMessageReporter</class>
+    <class kind="class">org::lflang::federated::generator::TLSGenerator</class>
   </compound>
   <compound kind="namespace">
     <name>org::lflang::federated::launcher</name>
@@ -43190,6 +44154,9 @@
     <filename>namespaceorg_1_1lflang_1_1federated_1_1serialization.html</filename>
     <class kind="class">org::lflang::federated::serialization::FedCustomPythonSerialization</class>
     <class kind="class">org::lflang::federated::serialization::FedNativePythonSerialization</class>
+    <class kind="class">org::lflang::federated::serialization::FedProtoCSerialization</class>
+    <class kind="class">org::lflang::federated::serialization::FedProtoCSerializationTest</class>
+    <class kind="class">org::lflang::federated::serialization::FedProtoPythonSerialization</class>
     <class kind="class">org::lflang::federated::serialization::FedROS2CPPSerialization</class>
     <class kind="interface">org::lflang::federated::serialization::FedSerialization</class>
     <class kind="enum">org::lflang::federated::serialization::SupportedSerializers</class>
@@ -43412,6 +44379,7 @@
     <class kind="class">org::lflang::target::property::SchedulerProperty</class>
     <class kind="class">org::lflang::target::property::SingleFileProjectProperty</class>
     <class kind="class">org::lflang::target::property::SingleThreadedProperty</class>
+    <class kind="class">org::lflang::target::property::SSTProperty</class>
     <class kind="class">org::lflang::target::property::StringListProperty</class>
     <class kind="class">org::lflang::target::property::StringProperty</class>
     <class kind="class">org::lflang::target::property::TargetProperty</class>
@@ -43499,6 +44467,7 @@
     <class kind="class">org::lflang::tests::runtime::CTest</class>
     <class kind="class">org::lflang::tests::runtime::CVerifierTest</class>
     <class kind="class">org::lflang::tests::runtime::CZephyrTest</class>
+    <class kind="class">org::lflang::tests::runtime::PolyglotTest</class>
     <class kind="class">org::lflang::tests::runtime::PythonTest</class>
     <class kind="class">org::lflang::tests::runtime::RustTest</class>
     <class kind="class">org::lflang::tests::runtime::TypeScriptTest</class>
@@ -43629,6 +44598,8 @@
     <class kind="class">org::lflang::federated::launcher::TsBuildConfig</class>
     <class kind="class">org::lflang::federated::serialization::FedCustomPythonSerialization</class>
     <class kind="class">org::lflang::federated::serialization::FedNativePythonSerialization</class>
+    <class kind="class">org::lflang::federated::serialization::FedProtoCSerialization</class>
+    <class kind="class">org::lflang::federated::serialization::FedProtoPythonSerialization</class>
     <class kind="class">org::lflang::federated::serialization::FedROS2CPPSerialization</class>
     <class kind="interface">org::lflang::federated::serialization::FedSerialization</class>
     <class kind="enum">org::lflang::federated::serialization::SupportedSerializers</class>
@@ -43792,6 +44763,7 @@
     <class kind="class">org::lflang::tests::runtime::CTest</class>
     <class kind="class">org::lflang::tests::runtime::CVerifierTest</class>
     <class kind="class">org::lflang::tests::runtime::CZephyrTest</class>
+    <class kind="class">org::lflang::tests::runtime::PolyglotTest</class>
     <class kind="class">org::lflang::tests::runtime::PythonTest</class>
     <class kind="class">org::lflang::tests::runtime::RustTest</class>
     <class kind="class">org::lflang::tests::runtime::TypeScriptTest</class>
@@ -44105,6 +45077,12 @@
     <dir>/Users/runner/work/lingua-franca/lingua-franca/core/src/main/java/org/lflang/federated/validation</dir>
   </compound>
   <compound kind="dir">
+    <name>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated</name>
+    <path>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated/</path>
+    <filename>dir_ca4d2e23db6d13a9b4dd1e2ab234a63a.html</filename>
+    <dir>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated/serialization</dir>
+  </compound>
+  <compound kind="dir">
     <name>/Users/runner/work/lingua-franca/lingua-franca/core/src/main/java/org/lflang/formatting2</name>
     <path>/Users/runner/work/lingua-franca/lingua-franca/core/src/main/java/org/lflang/formatting2/</path>
     <filename>dir_c06b319ba3c9e6934521600218dd0ebf.html</filename>
@@ -44128,7 +45106,9 @@
     <file>FedTargetEmitter.java</file>
     <file>FedUtils.java</file>
     <file>LineAdjustingMessageReporter.java</file>
+    <file>SSTGenerator.java</file>
     <file>SynchronizedMessageReporter.java</file>
+    <file>TLSGenerator.java</file>
   </compound>
   <compound kind="dir">
     <name>/Users/runner/work/lingua-franca/lingua-franca/core/src/main/java/org/lflang/generator</name>
@@ -44407,6 +45387,7 @@
     <name>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang</name>
     <path>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/</path>
     <filename>dir_3480b59bed7025efccbf3e68ac553cf9.html</filename>
+    <dir>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated</dir>
     <dir>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/tests</dir>
   </compound>
   <compound kind="dir">
@@ -44638,6 +45619,7 @@
     <file>SchedulerProperty.java</file>
     <file>SingleFileProjectProperty.java</file>
     <file>SingleThreadedProperty.java</file>
+    <file>SSTProperty.java</file>
     <file>StringListProperty.java</file>
     <file>StringProperty.java</file>
     <file>TargetProperty.java</file>
@@ -44689,6 +45671,7 @@
     <file>CTest.java</file>
     <file>CVerifierTest.java</file>
     <file>CZephyrTest.java</file>
+    <file>PolyglotTest.java</file>
     <file>PythonTest.java</file>
     <file>RustTest.java</file>
     <file>TypeScriptTest.java</file>
@@ -44719,9 +45702,17 @@
     <filename>dir_0ba6377a9ab5362775c48b3661bbea26.html</filename>
     <file>FedCustomPythonSerialization.java</file>
     <file>FedNativePythonSerialization.java</file>
+    <file>FedProtoCSerialization.java</file>
+    <file>FedProtoPythonSerialization.java</file>
     <file>FedROS2CPPSerialization.java</file>
     <file>FedSerialization.java</file>
     <file>SupportedSerializers.java</file>
+  </compound>
+  <compound kind="dir">
+    <name>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated/serialization</name>
+    <path>/Users/runner/work/lingua-franca/lingua-franca/core/src/test/java/org/lflang/federated/serialization/</path>
+    <filename>dir_879db75af85120b2000667b1f27d13f3.html</filename>
+    <file>FedProtoCSerializationTest.java</file>
   </compound>
   <compound kind="dir">
     <name>/Users/runner/work/lingua-franca/lingua-franca/cli/base/src</name>
