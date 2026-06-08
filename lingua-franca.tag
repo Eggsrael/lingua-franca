@@ -7012,10 +7012,24 @@
     </member>
     <member kind="function" static="yes">
       <type>static boolean</type>
+      <name>hasAbsentAfter</name>
+      <anchorfile>classorg_1_1lflang_1_1AttributeUtils.html</anchorfile>
+      <anchor>a0333bd1b839edefe8400624913d175e0</anchor>
+      <arglist>(EObject node)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static boolean</type>
       <name>hasCBody</name>
       <anchorfile>classorg_1_1lflang_1_1AttributeUtils.html</anchorfile>
       <anchor>a32478a716122f24fa20c8e66ecbe6ba5</anchor>
       <arglist>(Reaction reaction)</arglist>
+    </member>
+    <member kind="function" static="yes">
+      <type>static boolean</type>
+      <name>hasMaxWait</name>
+      <anchorfile>classorg_1_1lflang_1_1AttributeUtils.html</anchorfile>
+      <anchor>a62c3dc4215c9e679c41787804694977c</anchor>
+      <arglist>(EObject node)</arglist>
     </member>
     <member kind="function" static="yes">
       <type>static boolean</type>
