@@ -438,9 +438,14 @@ ${"             |        "..declareChildConnections()}
      * E.g. actions on which we have just a trigger dependency
      * are fine to ignore.
      */
-    private fun ReactorComponent.mayBeUnusedInReaction(depKind: DepKind): Boolean =
-        depKind == DepKind.Triggers && this !is PortData
-
+    private fun ReactorComponent.mayBeUnusedInReaction(depKind: DepKind): Boolean {
+        val isTrigger = (depKind == DepKind.Triggers)
+        return when (this) {
+            is PortData -> isTrigger && isInput
+            is ChildPortReference -> isInput
+            else -> isTrigger
+        }
+    }
 
     /** Action that must be taken to cleanup this component within the `cleanup_tag` procedure. */
     private fun ReactorComponent.cleanupAction(): TargetCode? = when (this) {
