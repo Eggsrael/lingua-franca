@@ -29004,8 +29004,8 @@
     <member kind="function">
       <type>void</type>
       <name>validate</name>
-      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
-      <anchor>a05712b0e4f6256710f969dfd27a097f3</anchor>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1CoordinationProperty.html</anchorfile>
+      <anchor>aca44e48d566c18e7e68e8e1284fa05ee</anchor>
       <arglist>(TargetConfig config, MessageReporter reporter)</arglist>
     </member>
     <member kind="variable">
@@ -32160,6 +32160,151 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>org::lflang::target::property::RustEditionProperty</name>
+    <filename>classorg_1_1lflang_1_1target_1_1property_1_1RustEditionProperty.html</filename>
+    <base>org.lflang.target.property.StringProperty</base>
+    <member kind="function">
+      <type>Optional&lt; Element &gt;</type>
+      <name>astElementFromConfig</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a6a5c01889646675b2403aba03a9561b1</anchor>
+      <arglist>(TargetConfig config)</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>checkType</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ad2943097a2b239aecb9c0bf4eb2968f6</anchor>
+      <arglist>(KeyValuePair pair, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>equals</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a204b717061ca87ddd71cbc866440af5c</anchor>
+      <arglist>(Object obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>fromAst</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html</anchorfile>
+      <anchor>a1399e7174c14f2293e7dbc8e9e7886cc</anchor>
+      <arglist>(Element node, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>hashCode</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a29acc44b1e353f4638f22bb3289d7338</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>initialValue</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html</anchorfile>
+      <anchor>a30a818f243a7242000bac28eb3995686</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromFederate</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a887afc08ede48190976f784b8769b7ea</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromFederation</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a033370849eef3120afd46c4845863e2d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
+      <name>loadFromImport</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ab53684f78f96af96841c92187f131488</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>name</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1RustEditionProperty.html</anchorfile>
+      <anchor>ab21568a7a06a6c8586ca5a2e7daeb3ae</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>final void</type>
+      <name>override</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a2a3ae8487cf2df37b7e3c98a9d594685</anchor>
+      <arglist>(TargetConfig config, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>Element</type>
+      <name>toAstElement</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html</anchorfile>
+      <anchor>aa1872cfeb3dcc048cce280b8476ad978</anchor>
+      <arglist>(String value)</arglist>
+    </member>
+    <member kind="function">
+      <type>abstract Element</type>
+      <name>toAstElement</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a7f6fdee8910285230340bcd7a52f3ade</anchor>
+      <arglist>(T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>String</type>
+      <name>toString</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a80cded89b1d2808e307cd4b9991f887b</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>update</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>a74548a3778514c9c3757ee031dae825c</anchor>
+      <arglist>(TargetConfig config, T value)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>validate</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1RustEditionProperty.html</anchorfile>
+      <anchor>abd250c4bdf9fedad4d2aa2a98528597e</anchor>
+      <arglist>(TargetConfig config, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="variable">
+      <type>final S</type>
+      <name>type</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ae91c05dae9df2fc924ba84e4072e2087</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final RustEditionProperty</type>
+      <name>INSTANCE</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1RustEditionProperty.html</anchorfile>
+      <anchor>a3cbfe80a48c2d47a1d21080b833b1dfd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>T</type>
+      <name>fromJSON</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TargetProperty.html</anchorfile>
+      <anchor>ac340310011200e10f311d2fe985be828</anchor>
+      <arglist>(JsonElement element, MessageReporter reporter)</arglist>
+    </member>
+    <member kind="function" protection="protected">
+      <type>String</type>
+      <name>fromString</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1StringProperty.html</anchorfile>
+      <anchor>a3abf3f3328d85906dd4e3d4e7ee8336e</anchor>
+      <arglist>(String string, MessageReporter reporter)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>org::lflang::target::property::RustIncludeProperty</name>
     <filename>classorg_1_1lflang_1_1target_1_1property_1_1RustIncludeProperty.html</filename>
     <base>org.lflang.target.property.TargetProperty&lt; List&lt; Path &gt;, UnionType &gt;</base>
@@ -33715,6 +33860,13 @@
     </member>
     <member kind="variable">
       <type></type>
+      <name>ENDPOINT</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1TracePluginProperty_1_1TracePluginOption.html</anchorfile>
+      <anchor>a29b87c6d49c540c63bcf850556cceb6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type></type>
       <name>LIBRARY</name>
       <anchorfile>enumorg_1_1lflang_1_1target_1_1property_1_1TracePluginProperty_1_1TracePluginOption.html</anchorfile>
       <anchor>a32611302fb900b78b2d24322f8864378</anchor>
@@ -33738,6 +33890,13 @@
   <compound kind="class">
     <name>org::lflang::target::property::TracePluginProperty::TracePluginSpec</name>
     <filename>classorg_1_1lflang_1_1target_1_1property_1_1TracePluginProperty_1_1TracePluginSpec.html</filename>
+    <member kind="variable">
+      <type>String</type>
+      <name>endpoint</name>
+      <anchorfile>classorg_1_1lflang_1_1target_1_1property_1_1TracePluginProperty_1_1TracePluginSpec.html</anchorfile>
+      <anchor>abc235d268a8307adc562b79dffa4bde3</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="variable">
       <type>String</type>
       <name>library</name>
@@ -35637,6 +35796,13 @@
     </member>
     <member kind="function">
       <type>boolean</type>
+      <name>supportsDecentralizedCoordination</name>
+      <anchorfile>enumorg_1_1lflang_1_1target_1_1Target.html</anchorfile>
+      <anchor>a48f496ef747cd59985b53bf33056f28f</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>boolean</type>
       <name>supportsEnclaves</name>
       <anchorfile>enumorg_1_1lflang_1_1target_1_1Target.html</anchorfile>
       <anchor>ae7fc130c9d940beb842392e828e073d2</anchor>
@@ -36568,6 +36734,13 @@
       <name>testCppMutableInput</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1compiler_1_1LinguaFrancaValidationTest.html</anchorfile>
       <anchor>ac9c06daa20c4d740a8540dd60cd0d7b4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>testDecentralizedCoordinationNotSupportedForTypeScript</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1compiler_1_1LinguaFrancaValidationTest.html</anchorfile>
+      <anchor>a87c8b88f874283b36029873490067ba5</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -41992,6 +42165,13 @@
     </member>
     <member kind="variable" static="yes">
       <type>static final String</type>
+      <name>NO_DECENTRALIZED_COORDINATION_SUPPORT</name>
+      <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase_1_1Message.html</anchorfile>
+      <anchor>a3fcd5dd4b3c27ed06db2b5e4e8824c26</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable" static="yes">
+      <type>static final String</type>
       <name>NO_DOCKER_SUPPORT</name>
       <anchorfile>classorg_1_1lflang_1_1tests_1_1TestBase_1_1Message.html</anchorfile>
       <anchor>aa0d8beea63a6eb9b82048e6936cf6139</anchor>
@@ -44389,6 +44569,7 @@
     <class kind="class">org::lflang::target::property::Ros2DependenciesProperty</class>
     <class kind="class">org::lflang::target::property::Ros2Property</class>
     <class kind="class">org::lflang::target::property::RuntimeVersionProperty</class>
+    <class kind="class">org::lflang::target::property::RustEditionProperty</class>
     <class kind="class">org::lflang::target::property::RustIncludeProperty</class>
     <class kind="class">org::lflang::target::property::SchedulerProperty</class>
     <class kind="class">org::lflang::target::property::SingleFileProjectProperty</class>
@@ -45629,6 +45810,7 @@
     <file>Ros2DependenciesProperty.java</file>
     <file>Ros2Property.java</file>
     <file>RuntimeVersionProperty.java</file>
+    <file>RustEditionProperty.java</file>
     <file>RustIncludeProperty.java</file>
     <file>SchedulerProperty.java</file>
     <file>SingleFileProjectProperty.java</file>
